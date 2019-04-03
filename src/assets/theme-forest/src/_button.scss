@@ -1,0 +1,86 @@
+@charset "UTF-8";
+@import "./preload";
+
+@include b(button) {
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    -webkit-appearance: none;
+    text-align: center;
+    box-sizing: border-box;
+    outline: none;
+    margin: 0;
+    @include T(26);
+    @include user-select(none);
+    @include button-size(200, 46, 2);
+    padding: 0 unit(10);
+    background: transparent;
+    border: unit(1) solid $C02;
+    transition: .1s;
+
+    &+& {
+        margin-left: unit(10);
+    }
+
+    &:hover,
+    &:focus {
+        color: $C31;
+        border-color: $C11;
+        background-color: $C03;
+    }
+
+    &:active {
+        color: $C31;
+        border-color: $C11;
+        outline: none;
+    }
+
+    &::-moz-focus-inner {
+        border: 0;
+    }
+
+    @include when(disable) {
+
+        &,
+        &:hover,
+        &:focus {
+            color: $C34;
+            cursor: not-allowed;
+            background-image: none;
+            background-color: $C11;
+            border-color: $C11;
+        }
+    }
+
+    @include m(primary) {
+        @include button-variant($C04, $C05, primary);
+    }
+
+    @include m(large) {
+        @include button-size(300, 40, 2);
+        @include button-variant($C04, $C05, large);
+    }
+
+    @include m(small) {
+        @include button-size(140, 40, 2);
+        @include button-variant($C04, $C05, small);
+    }
+
+    @include m(mini) {
+        @include button-size(60, 28, 2);
+    }
+
+    @include m(ghost) {
+        border: none;
+        @include button-variant($C11, $C03, ghost);
+        @include button-size(60, 28, 2);
+    }
+
+    @include m(icon) {
+        color: $C31;
+        margin-right: unit(10);
+    }
+}

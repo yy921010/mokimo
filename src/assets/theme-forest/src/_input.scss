@@ -1,0 +1,57 @@
+@charset "UTF-8";
+@import "./preload";
+@include b(input) {
+    display: inline-block;
+    position: relative;
+    @include m(default) {
+        @include input-basic;
+        width: unit(300-44-2);
+        height: unit(40-2);
+        border: unit(1) solid $C11;
+        background-color: $C03;
+        padding: 0 unit(34) 0 unit(10);
+        @include when(error) {
+            border: unit(1) solid $C04;
+        }
+    }
+    @include m(search) {
+        @include input-basic;
+        @include rc(2);
+        border: unit(1) solid $C03;
+        background-color: $C11;
+        height: unit(36-2);
+        padding-left: unit(20);
+        padding-right: unit(36);
+        width: unit(300-68);
+        &:focus,
+        &:hover {
+            border: unit(1) solid $C02;
+            outline: none;
+        }
+        @include when(error) {
+            border: unit(1) solid $C04;
+        }
+    }
+    @include m(clear) {
+        color: $C34;
+        @include S(14);
+        position: absolute;
+        top: unit(12);
+        right: unit(10);
+        cursor: pointer;
+    }
+    @include m(center) {
+        @include input-basic;
+        width: unit(460);
+        height: unit(46);
+        text-align: center;
+        background-color: $C03;
+    }
+    @include m(search-icon) {
+        @include S(20);
+        position: absolute;
+        top: unit(12);
+        right: unit(10);
+        color: $C34;
+    }
+}
