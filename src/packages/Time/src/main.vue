@@ -18,10 +18,10 @@
     >{{minutes}}</span>
     <div class="mok-time--suffix">
       <span class="mok-time__up" @click.stop="changeMinute(TIME_DIREC.UP)">
-        <mo-icon name="keyboard_arrow_up"></mo-icon>
+        <mo-icon name="arrow-up-s"></mo-icon>
       </span>
       <span class="mok-time__down" @click.stop="changeMinute(TIME_DIREC.DOWN)">
-        <mo-icon name="keyboard_arrow_down"></mo-icon>
+        <mo-icon name="arrow-down-s"></mo-icon>
       </span>
     </div>
   </div>
