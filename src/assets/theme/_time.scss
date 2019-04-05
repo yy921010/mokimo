@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import "./preload";
+@import "./public";
 @include b(time) {
     display: flex;
     height: unit(46);

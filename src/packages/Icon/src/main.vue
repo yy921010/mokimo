@@ -1,5 +1,5 @@
 <template>
-  <i class="mok-icon" @click="handleClick" :style="[{'font-size':fontUnit,'width':unit,'height':unit}]">{{name}}</i>
+  <i class="mok-icon"  :class="'remixicon-'+name+'-'+type" @click="handleClick" :style="[{'font-size':unit,'width':unit,'height':unit}]"></i>
 </template>
 
 <script>
@@ -10,14 +10,15 @@ export default {
     size: {
       type: Number,
       default: 14
+    },
+    type: {
+      type: String,
+      default: 'line'
     }
   },
   computed: {
     unit () {
       return this.size / 16 + 'rem'
-    },
-    fontUnit () {
-      return (this.size + 1) / 16 + 'rem'
     }
   },
   methods: {

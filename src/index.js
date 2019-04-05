@@ -2,11 +2,18 @@ import Button from './packages/Button'
 import Input from './packages/Input'
 import Icon from './packages/Icon'
 import Time from './packages/Time'
+import Process from './packages/Process'
+/**
+ * theme
+ */
+import '@/assets/theme/index.scss'
+import 'remixicon/fonts/remixicon.css'
 const components = [
   Button,
   Input,
   Icon,
-  Time
+  Time,
+  Process
 ]
 
 const install = function (Vue, opts = {}) {
@@ -15,7 +22,7 @@ const install = function (Vue, opts = {}) {
   })
 }
 export default {
-  name: 'Moko',
+  name: 'mokimo',
   version: '0.0.1',
   Button,
   Input,

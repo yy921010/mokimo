@@ -5,13 +5,14 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "build:umd":"webpack --config ./build/webpack.conf.js",
+    "build:lib":"vue-cli-service build --target lib --name mokimo ./src/index.js",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
     "start": "npm run serve"
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "remixicon": "^1.1.1",
     "vue": "^2.6.6"
   },
   "devDependencies": {
@@ -28,12 +29,9 @@
     "eslint-plugin-vue": "^5.0.0",
     "lint-staged": "^8.1.4",
     "node-sass": "^4.9.0",
-    "progress-bar-webpack-plugin": "^1.12.1",
     "sass-loader": "^7.1.0",
-    "vue-loader": "^15.7.0",
     "vue-template-compiler": "^2.5.21",
-    "webpack": "^4.29.6",
-    "webpack-cli": "^3.3.0"
+    "webpack": "^4.29.6"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"

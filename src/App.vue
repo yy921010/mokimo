@@ -52,11 +52,25 @@ export default {
 
 <style lang="scss">
 #app {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  background: rgb(20, 20, 20);
+  height: 1000vh;
+  .app-main {
+    width: 1280px;
+  }
+  h1 {
+    margin-bottom: 50px;
+    margin-top: 50px;
+  }
+  h2 {
+    margin-bottom: 25px;
+    margin-top: 25px;
+  }
 }
 </style>
