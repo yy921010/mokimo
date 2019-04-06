@@ -15,7 +15,7 @@
 export default {
   data () {
     return {
-      date: new Date()
+      date: new Date().toString()
     }
   }
 }

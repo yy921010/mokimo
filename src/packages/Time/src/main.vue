@@ -1,27 +1,21 @@
 <template>
   <div class="mok-time">
-    <input
+    <span
       class="mok-time--hours"
       @click.stop="chosen('hours')"
       :class="{'is-chosen':chosenName === 'hours'}"
-      :value="hours"
-      @input="handleInput"
-      readonly
-    >
+    >{{hours}}</span>
     <span class="mok-time--split">
       <div class="mok-time__dots">
         <i class="mok-time__dot"></i>
         <i class="mok-time__dot"></i>
       </div>
     </span>
-    <input
+    <span
       class="mok-time--minute"
       @click.stop="chosen('minutes')"
       :class="{'is-chosen':chosenName === 'minutes'}"
-      :value="minutes"
-      @input="handleInput"
-      readonly
-    >
+    >{{minutes}}</span>
     <div class="mok-time--suffix">
       <span class="mok-time__up" @click.stop="changeMinute(TIME_DIREC.UP)">
         <mo-icon name="arrow-up-s"></mo-icon>
@@ -42,26 +36,34 @@ export default {
       TIME_DIREC: {
         DOWN: '1',
         UP: '2'
-      }
+      },
+      date: ''
     }
   },
   props: {
-    value: {
-      type: Date,
-      default: new Date()
+    option: {
+      type: String,
+      default: ''
     }
   },
-  created () {
-    document.onclick = () => {
-      this.chosenName = ''
-    }
+  model: {
+    prop: 'option',
+    event: 'change'
   },
   computed: {
     hours () {
-      return this.getTimeStr(this.value.getHours())
+      const hours = this.parseToDate(this.option).getHours()
+      return this.getTimeStr(hours)
     },
     minutes () {
-      return this.getTimeStr(this.value.getMinutes())
+      const minutes = this.parseToDate(this.option).getMinutes()
+      return this.getTimeStr(minutes)
+    }
+  },
+  created () {
+    this.date = this.parseToDate(this.option)
+    document.onclick = () => {
+      this.chosenName = ''
     }
   },
   methods: {
@@ -79,26 +81,28 @@ export default {
     changeTime (isUp) {
       switch (this.chosenName) {
         case 'hours':
-          let curHousrs = this.value.getHours()
-          this.value.setHours(isUp ? curHousrs - 1 : curHousrs + 1)
+          let curHousrs = this.date.getHours()
+          this.date.setHours(isUp ? curHousrs - 1 : curHousrs + 1)
+          this.$emit('change', this.date.toString())
           break
         case 'minutes':
-          let curMinutes = this.value.getMinutes()
-          this.value.setMinutes(isUp ? curMinutes - 1 : curMinutes + 1)
+          let curMinutes = this.date.getMinutes()
+          this.date.setMinutes(isUp ? curMinutes - 1 : curMinutes + 1)
+          this.$emit('change', this.date.toString())
           break
       }
-      console.log(this.value)
-      this.$emit('input', this.value)
     },
+
     getTimeStr (timeNumber) {
       return ('' + timeNumber).padStart(2, '0')
     },
+
+    parseToDate (dateStr) {
+      return new Date(dateStr)
+    },
+
     chosen (chosenName) {
       this.chosenName = chosenName
-    },
-    handleInput (event) {
-      console.log(event)
-      // this.$emit('input', this.value)
     }
   }
 }

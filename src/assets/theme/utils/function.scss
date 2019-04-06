@@ -1,5 +1,10 @@
 @function unit($PX) {
-    @return $PX/16+rem;
+    @if $unit-name == rem{
+        @return $PX/16+$unit-name;
+    }
+    @if $unit-name == px{
+        @return $PX+$unit-name
+    }
 }
 
 /* BEM support Func
