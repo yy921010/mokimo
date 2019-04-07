@@ -1,6 +1,6 @@
 @function unit($PX) {
     @if $unit-name == rem{
-        @return $PX/16+$unit-name;
+        @return $PX/$unit-size+$unit-name;
     }
     @if $unit-name == px{
         @return $PX+$unit-name

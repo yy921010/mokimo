@@ -19,8 +19,7 @@
     padding: 0 unit(10);
     background: transparent;
     border: unit(1) solid $C02;
-    transition: .1s;
-
+    transition: $transition-time;
     &+& {
         margin-left: unit(10);
     }

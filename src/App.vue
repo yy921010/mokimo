@@ -3,6 +3,7 @@
     <buttonDemo/>
     <inputDemo/>
     <timeDemo/>
+    <processDemo/>
   </div>
 </template>
 
@@ -10,12 +11,14 @@
 import buttonDemo from './example/button.vue'
 import inputDemo from './example/input.vue'
 import timeDemo from './example/time.vue'
+import processDemo from './example/process.vue'
 export default {
   name: 'app',
   components: {
     buttonDemo,
     inputDemo,
-    timeDemo
+    timeDemo,
+    processDemo
   },
   data () {
     return {

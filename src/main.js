@@ -3,7 +3,10 @@ import App from './App.vue'
 import vineoUI from './index'
 
 Vue.config.productionTip = false
-Vue.use(vineoUI)
+Vue.use(vineoUI, {
+  unitName: 'rem',
+  unitSize: 16
+})
 
 new Vue({
   render: h => h(App)

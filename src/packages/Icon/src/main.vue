@@ -1,8 +1,14 @@
 <template>
-  <i class="mok-icon"  :class="'remixicon-'+name+'-'+type" @click="handleClick" :style="[{'font-size':unit,'width':unit,'height':unit}]"></i>
+  <i
+    class="mok-icon"
+    :class="'remixicon-'+name+'-'+type"
+    @click="handleClick"
+    :style="[{'font-size':unit,'width':unit,'height':unit}]"
+  ></i>
 </template>
 
 <script>
+import { unit } from '@/utils/unit'
 export default {
   name: 'MoIcon',
   props: {
@@ -18,7 +24,7 @@ export default {
   },
   computed: {
     unit () {
-      return this.size / 16 + 'rem'
+      return unit(this.size)
     }
   },
   methods: {

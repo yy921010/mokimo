@@ -2,7 +2,7 @@ import Button from './packages/Button'
 import Input from './packages/Input'
 import Icon from './packages/Icon'
 import Time from './packages/Time'
-import Process from './packages/Process'
+import Progress from './packages/Progress'
 /**
  * theme
  */
@@ -13,7 +13,7 @@ const components = [
   Input,
   Icon,
   Time,
-  Process
+  Progress
 ]
 
 const install = function (Vue, opts = {}) {
@@ -21,6 +21,7 @@ const install = function (Vue, opts = {}) {
     Vue.component(component.name, component)
   })
   Vue.prototype.$unitName = opts.unitName || 'rem'
+  Vue.prototype.$unitSize = opts.unitSize || 1
 }
 
 /* istanbul ignore if */
