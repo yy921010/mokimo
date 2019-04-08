@@ -1,8 +1,8 @@
-import Button from './packages/Button'
-import Input from './packages/Input'
-import Icon from './packages/Icon'
-import Time from './packages/Time'
-import Progress from './packages/Progress'
+import Button from './Button'
+import Input from './Input'
+import Icon from './Icon'
+import Time from './Time'
+import Progress from './Progress'
 /**
  * theme
  */

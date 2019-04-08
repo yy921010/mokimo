@@ -10,15 +10,9 @@ module.exports = {
   publicPath: baseUrl,
   // 是否为生产环境构建生成 source map？
   productionSourceMap: false,
-  // css: {
-  //   loaderOptions: {
-  //     sass: {
-  //       data: `@import '~@/assets/theme-forest/src/index.scss';`
-  //     }
-  //   }
-  // },
   chainWebpack: config => {
     config.resolve.alias
       .set('@', resolve('src'))
+      .set('@packages', resolve('packages'))
   }
 }
