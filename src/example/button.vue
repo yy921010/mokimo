@@ -11,7 +11,7 @@
     <br>
     <h2>禁用状态</h2>
     <mo-button disable>default</mo-button>
-    <mo-button type="primary" disable>primary</mo-button>
+    <mo-button iconName="search" type="primary" disable>primary</mo-button>
     <mo-button type="large" disable>large</mo-button>
     <mo-button type="small" disable>small</mo-button>
     <mo-button type="mini" disable>mini</mo-button>

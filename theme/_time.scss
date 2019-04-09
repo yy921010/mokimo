@@ -55,6 +55,7 @@
         @extend .mok-time--hours;
     }
     @include m(suffix) {
+        fill: $C31;
         display: flex;
         flex-direction: column;
         height: unit(46);

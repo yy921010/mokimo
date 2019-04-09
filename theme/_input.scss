@@ -33,7 +33,7 @@
         }
     }
     @include m(clear) {
-        color: $C34;
+        fill: $C34;
         @include S(14);
         position: absolute;
         top: unit(12);
@@ -52,6 +52,6 @@
         position: absolute;
         top: unit(12);
         right: unit(10);
-        color: $C34;
+        fill: $C34;
     }
 }

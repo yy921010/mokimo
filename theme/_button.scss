@@ -20,6 +20,7 @@
     background: transparent;
     border: unit(1) solid $C02;
     transition: $transition-time;
+    fill: $C31;
     &+& {
         margin-left: unit(10);
     }
@@ -42,7 +43,7 @@
     }
 
     @include when(disable) {
-
+        fill: $C34 !important;
         &,
         &:hover,
         &:focus {
@@ -79,7 +80,6 @@
     }
 
     @include m(icon) {
-        color: $C31;
         margin-right: unit(10);
     }
 }

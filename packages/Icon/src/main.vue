@@ -1,14 +1,15 @@
 <template>
-  <i
+  <svg
     class="mok-icon"
-    :class="'remixicon-'+name+'-'+type"
     @click="handleClick"
     :style="[{'font-size':unit,'width':unit,'height':unit}]"
-  ></i>
+  >
+    <use :xlink:href="icon"></use>
+  </svg>
 </template>
 
 <script>
-import { unit } from '@/utils/unit'
+import { unit, getIcon } from '@/utils/unit'
 export default {
   name: 'MoIcon',
   props: {
@@ -25,6 +26,9 @@ export default {
   computed: {
     unit () {
       return unit(this.size)
+    },
+    icon () {
+      return getIcon(this.name, this.type)
     }
   },
   methods: {

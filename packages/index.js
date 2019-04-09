@@ -3,11 +3,7 @@ import Input from './Input'
 import Icon from './Icon'
 import Time from './Time'
 import Progress from './Progress'
-/**
- * theme
- */
-import '@/assets/theme/index.scss'
-import 'remixicon/fonts/remixicon.css'
+import MokDrag from './directive/drag'
 const components = [
   Button,
   Input,
@@ -20,8 +16,10 @@ const install = function (Vue, opts = {}) {
   components.forEach(component => {
     Vue.component(component.name, component)
   })
+
   Vue.prototype.$unitName = opts.unitName || 'rem'
   Vue.prototype.$unitSize = opts.unitSize || 1
+  Vue.directive('mokdrag', MokDrag)
 }
 
 /* istanbul ignore if */
@@ -33,5 +31,8 @@ export default {
   version: '0.0.1',
   Button,
   Input,
-  install
+  install,
+  Icon,
+  Time,
+  Progress
 }
