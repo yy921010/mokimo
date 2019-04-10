@@ -1,5 +1,6 @@
 
 export default {
+  name: 'mokdrag',
   inserted (el, binding) {
     let currentDOM = el
     let maxLeft = el.parentNode.clientWidth - el.clientWidth
