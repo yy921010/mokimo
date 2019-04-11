@@ -2,7 +2,13 @@
   <div class="mok-progress" :style="{'height':heightUnit}">
     <div class="mok-progress--schedule" :style="{'width':percent}"></div>
     <div class="mok-progress--buffer" v-if="canDrag"></div>
-    <div class="mok-progress--drag-button" v-if="canDrag" @mousedown="startDragable" v-mokdrag>
+    <div
+      class="mok-progress--drag-button"
+      v-if="canDrag"
+      @mousedown="startDrag"
+      ref="dragId"
+      :style="{'left':left+'px'}"
+    >
       <div class="mok-progress__drag-cricle"></div>
     </div>
   </div>
@@ -14,7 +20,9 @@ export default {
   name: 'MoProgress',
   data () {
     return {
-      isDraggable: false
+      isDraggable: false,
+      beginOffset: 0,
+      left: 0
     }
   },
   props: {
@@ -29,15 +37,30 @@ export default {
   },
   computed: {
     percent () {
-      return this.value + '%'
+      return this.left + '%'
     },
     heightUnit () {
       return unit(this.canDrag ? 8 : 4)
     }
   },
   methods: {
-    startDragable () {
-
+    startDrag (evt) {
+      this.beginOffset = evt.clientX - this.$refs.dragId.offsetLeft
+      this.isDraggable = true
+      document.addEventListener('mousemove', this.dragging)
+      document.addEventListener('mouseup', this.endDrag)
+      document.addEventListener('mouseleave', this.endDrag)
+    },
+    dragging (evt) {
+      if (this.isDraggable) {
+        this.left = evt.clientX - this.beginOffset
+      }
+    },
+    endDrag () {
+      this.isDraggable = false
+      document.removeEventListener('mousemove', this.dragging)
+      document.removeEventListener('mouseup', this.endDrag)
+      document.removeEventListener('mouseleave', this.endDrag)
     }
   }
 }
