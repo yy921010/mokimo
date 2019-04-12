@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build",
-    "build:lib":"vue-cli-service build --target lib --name mokimo ./src/index.js",
+    "build:lib":"vue-cli-service build --target lib --name mokimo ./src/components/index.js",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
     "start": "npm run serve"

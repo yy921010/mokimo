@@ -2,16 +2,18 @@
   <svg
     class="mok-icon"
     @click="handleClick"
-    :style="[{'font-size':unit,'width':unit,'height':unit}]"
+    :style="[{'font-size':unit(this.size),'width':unit(this.size),'height':unit(this.size)}]"
   >
     <use :xlink:href="icon"></use>
   </svg>
 </template>
 
 <script>
-import { unit, getIcon } from '@/utils/unit'
+import iconSymbol from 'remixicon/fonts/remixicon.symbol.svg'
+import unit from '@mixin/unit'
 export default {
   name: 'MoIcon',
+  mixins: [unit],
   props: {
     name: String,
     size: {
@@ -24,11 +26,8 @@ export default {
     }
   },
   computed: {
-    unit () {
-      return unit(this.size)
-    },
     icon () {
-      return getIcon(this.name, this.type)
+      return `${iconSymbol}#remixicon-${this.name}-${this.type}`
     }
   },
   methods: {

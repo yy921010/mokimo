@@ -3,8 +3,6 @@
     <h1>进度条</h1>
     <h2>基本状态</h2>
     <MoProgress :value="value"/>
-    <h2>可以拖拽</h2>
-     <MoProgress :value="value" :canDrag="true"/>
   </div>
 </template>
 <style>
@@ -16,7 +14,7 @@
 export default {
   data () {
     return {
-      value: 0
+      value: 100
     }
   },
   created () {

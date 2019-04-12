@@ -13,5 +13,7 @@ module.exports = {
   chainWebpack: config => {
     config.resolve.alias
       .set('@', resolve('src'))
+      .set('@mixin', resolve('src/mixin/'))
+      .set('@components', resolve('src/components/'))
   }
 }

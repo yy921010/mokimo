@@ -4,6 +4,8 @@
     <inputDemo/>
     <timeDemo/>
     <processDemo/>
+    <mo-poster :width="330" :height="186" :progress="10" :src="'http://img5.mtime.cn/mg/2019/04/12/164436.67383263_285X160X4.jpg'"></mo-poster>
+    <mo-poster :width="330" :height="186" :src="'http://img5.mtime.cn/mg/2019/04/12/164932.59885095_285X160X4.jpg'"></mo-poster>
   </div>
 </template>
 
