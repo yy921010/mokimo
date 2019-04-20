@@ -8,7 +8,13 @@
   disable?'is-disable':''
    ]"
   >
-    <mo-icon v-if="iconName !== ''" :name="iconName" :type="iconType" :size="20" class="mok-button--icon"></mo-icon>
+    <mo-icon
+      v-if="iconName !== ''"
+      :name="iconName"
+      :type="iconType"
+      :size="20"
+      class="mok-button--icon"
+    ></mo-icon>
     <span>
       <slot></slot>
     </span>
@@ -21,13 +27,15 @@ export default {
   props: {
     type: {
       type: String,
-      validator: (value) => ['', 'primary', 'large', 'small', 'mini', 'ghost'].indexOf(value) !== -1,
+      validator: value =>
+        ['', 'primary', 'large', 'small', 'mini', 'ghost'].indexOf(value) !==
+        -1,
       default: ''
     },
     nativeType: {
       type: String,
       default: 'button',
-      validator: (val) => ['button', 'reset', 'submit'].indexOf(val) !== -1
+      validator: val => ['button', 'reset', 'submit'].indexOf(val) !== -1
     },
     disable: {
       type: Boolean,

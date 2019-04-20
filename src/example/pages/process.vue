@@ -7,7 +7,7 @@
 </template>
 <style>
 .progress-demo{
-  min-width: 1280px;
+  height: 900px;;
 }
 </style>
 <script>

@@ -1,5 +1,5 @@
 <template>
-  <div class="input-group">
+  <div class="input">
     <h1>输入框</h1>
     <h2>默认</h2>
     <mo-input placeholder="默认设置" v-model="input"></mo-input>
@@ -25,7 +25,11 @@ export default {
 </script>
 
 <style>
-.input-group{
-  min-width: 1280px;
+.input{
+  height: 900px;
+}
+.mok-input{
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 </style>
