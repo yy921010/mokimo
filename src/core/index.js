@@ -22,7 +22,3 @@ export function model (vue, options = {}) {
     vue.prototype.$unitSize = config.unitSize || 1
   }
 }
-
-export function install (vue, options = {}) {
-
-}

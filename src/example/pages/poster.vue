@@ -13,7 +13,9 @@
       :width="330"
       :height="186"
       :src="'http://img5.mtime.cn/mg/2019/04/12/164932.59885095_285X160X4.jpg'"
-    ></mo-poster>
+    >
+    <mo-mask name="M2"></mo-mask>
+    </mo-poster>
   </div>
 </template>
 <style lang="scss" scoped>

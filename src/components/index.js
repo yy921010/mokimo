@@ -4,9 +4,9 @@ import Icon from './Icon'
 import Time from './Time'
 import Progress from './Progress'
 import Poster from './Poster'
-import MokDrag from '../directives/drag'
+import Mask from './Mask'
 import { model } from '../core'
-
+import '@/assets/styles/index.scss'
 export default {
   name: 'mokimo',
   version: '0.0.1',
@@ -16,6 +16,7 @@ export default {
   Time,
   Progress,
   Poster,
+  Mask,
   install (Vue, config = {}) {
     model(Vue, {
       components: [
@@ -24,10 +25,10 @@ export default {
         Icon,
         Time,
         Progress,
-        Poster
+        Poster,
+        Mask
       ],
       directives: [
-        MokDrag
       ],
       config
     })

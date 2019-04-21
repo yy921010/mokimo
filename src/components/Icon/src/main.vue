@@ -9,7 +9,6 @@
 </template>
 
 <script>
-import iconSymbol from 'remixicon/fonts/remixicon.symbol.svg'
 import unit from '@mixin/unit'
 export default {
   name: 'MoIcon',
@@ -27,7 +26,7 @@ export default {
   },
   computed: {
     icon () {
-      return `${iconSymbol}#remixicon-${this.name}-${this.type}`
+      return require('remixicon/fonts/remixicon.symbol.svg') + `#remixicon-${this.name}-${this.type}`
     }
   },
   methods: {

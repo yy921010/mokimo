@@ -19,6 +19,7 @@
         @include T(26);
         color: $C31;
         text-align: center;
+        line-height: 1;
         &:hover {
             background-color: $C22;
         }

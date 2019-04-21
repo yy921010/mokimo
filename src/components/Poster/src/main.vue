@@ -7,7 +7,6 @@
   </div>
 </template>
 <script>
-// 海报通过添加slot 来控制海报遮罩内容
 import unit from '@mixin/unit'
 export default {
   name: 'MoPoster',
