@@ -18,7 +18,11 @@ export function model (vue, options = {}) {
   }
 
   if (config) {
-    vue.prototype.$unitName = config.unitName || 'px'
-    vue.prototype.$unitSize = config.unitSize || 1
+    vue.prototype.$unitName = config.unitName || 'rem'
+    vue.prototype.$unitSize = config.unitSize || 16
+    if (!config.svgSymbol) {
+      console.error('svgSymbol is require')
+    }
+    vue.prototype.$svgSymbol = config.svgSymbol || ''
   }
 }

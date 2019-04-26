@@ -26,7 +26,7 @@ export default {
   },
   computed: {
     icon () {
-      return require('remixicon/fonts/remixicon.symbol.svg') + `#remixicon-${this.name}-${this.type}`
+      return this.$svgSymbol + `#remixicon-${this.name}-${this.type}`
     }
   },
   methods: {

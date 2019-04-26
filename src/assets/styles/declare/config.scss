@@ -2,6 +2,6 @@ $namespace: 'mok' !global;
 $separator: '__';
 $modifier-separator: '--';
 $state-prefix: 'is-';
-$unit-name: px !default;
-$unit-size: 1 !default;
+$unit-name: rem !default;
+$unit-size: 16 !default;
 $transition-time: 0.35s !default;
