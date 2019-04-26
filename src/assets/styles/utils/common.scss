@@ -117,6 +117,7 @@ BEM
 @mixin b($block) {
     $B: $namespace+'-'+$block !global;
     .#{$B} {
+        font-family: 'Open Sans', 'Noto Sans SC',sans-serif;
         @content;
     }
 }

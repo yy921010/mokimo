@@ -1,4 +1,5 @@
 @mixin input-basic {
+    font-family: Open Sans,Noto Sans SC,sans-serif;
     @include rc(1);
     @include T(32);
     color: $C31;
