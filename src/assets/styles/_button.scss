@@ -65,16 +65,19 @@
     }
 
     @include m(small) {
+       
         @include button-size(140, 40, 2);
         @include button-variant($C04, $C05, small);
     }
 
     @include m(mini) {
+        font-size: unit(16);
         @include button-size(60, 28, 2);
     }
 
     @include m(ghost) {
-        border: none;
+        font-size: unit(16);
+        border: unit(1) solid transparent;
         @include button-variant($C11, $C03, ghost);
         @include button-size(60, 28, 2);
     }

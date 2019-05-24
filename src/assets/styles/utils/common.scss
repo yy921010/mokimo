@@ -1,4 +1,5 @@
 // size 12,14,16,18,20,24,32,36,56,72
+
 @mixin S($size) {
     height: unit($size);
     width: unit($size);
@@ -117,7 +118,7 @@ BEM
 @mixin b($block) {
     $B: $namespace+'-'+$block !global;
     .#{$B} {
-        font-family: 'Open Sans', 'Noto Sans SC',sans-serif;
+        font-family: 'Josefin Sans', 'Noto Sans SC', sans-serif;
         @content;
     }
 }

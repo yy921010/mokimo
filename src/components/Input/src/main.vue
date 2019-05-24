@@ -8,6 +8,7 @@
       :readonly="readonly"
       :value="value"
       @input="handleInput"
+      @click="handleClick"
       :class="[isError?'is-error':'', type?'mok-input--'+type:'']"
     >
     <mo-icon class="mok-input--clear" name="close" v-if="showClear" @click="clearWord"/>
@@ -60,6 +61,9 @@ export default {
     },
     clearWord () {
       this.$emit('input', '')
+    },
+    handleClick () {
+      this.$emit('click', event)
     }
   }
 }

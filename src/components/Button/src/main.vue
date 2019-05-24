@@ -28,14 +28,13 @@ export default {
     type: {
       type: String,
       validator: value =>
-        ['', 'primary', 'large', 'small', 'mini', 'ghost'].indexOf(value) !==
-        -1,
+        ['', 'primary', 'large', 'small', 'mini', 'ghost'].includes(value),
       default: ''
     },
     nativeType: {
       type: String,
       default: 'button',
-      validator: val => ['button', 'reset', 'submit'].indexOf(val) !== -1
+      validator: val => ['button', 'reset', 'submit'].includes(val)
     },
     disable: {
       type: Boolean,

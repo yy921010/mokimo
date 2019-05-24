@@ -12,11 +12,10 @@ export default {
     value: {
       type: Number,
       default: 0
-    }
-  },
-  data () {
-    return {
-      height: 4
+    },
+    height: {
+      type: Number,
+      default: 4
     }
   },
   computed: {
