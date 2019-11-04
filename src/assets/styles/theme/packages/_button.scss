@@ -1,0 +1,26 @@
+@mixin button-base {
+  display: inline-block;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-appearance: none;
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  margin: 0;
+}
+
+@mixin button-size($width, $height, $border-radius) {
+  min-width: unit($width);
+  height: unit($height);
+  border-radius: unit($border-radius);
+}
+
+@mixin button() {
+  @include b(button) {
+    @include button-base;
+    & + & {
+      margin-left: unit(10);
+    }
+  }
+}

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="theme-container">
+    <div class="theme-container demo-123456">
       <header-layout></header-layout>
       <main-layout></main-layout>
       <sidebar-layout></sidebar-layout>

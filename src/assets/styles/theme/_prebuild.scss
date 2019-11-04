@@ -1,0 +1,207 @@
+$namespace: 'vi' !global;
+$separator: '__';
+$modifier-separator: '--';
+$state-prefix: 'is-';
+$transition-time: 0.35s !default;
+
+
+@function selectorToString($selector) {
+  $selector: inspect($selector);
+  $selector: str-slice($selector, 2, -2);
+  @return $selector;
+}
+
+@function containsModifier($selector) {
+  $selector: selectorToString($selector);
+  @if str-index($selector, $modifier-separator) {
+    @return true;
+  } @else {
+    @return false;
+  }
+}
+
+@function containWhenFlag($selector) {
+  $selector: selectorToString($selector);
+  @if str-index($selector, '.' + $state-prefix) {
+    @return true
+  } @else {
+    @return false
+  }
+}
+
+@function containPseudoClass($selector) {
+  $selector: selectorToString($selector);
+  @if str-index($selector, ':') {
+    @return true
+  } @else {
+    @return false
+  }
+}
+
+@function hitAllSpecialNestRule($selector) {
+  @return containsModifier($selector) or containWhenFlag($selector) or containPseudoClass($selector);
+}
+
+
+@function unit($number) {
+  @return $number+'px'
+}
+
+// bem for block
+@mixin b($block) {
+  $B: $namespace+'-'+$block !global;
+  .#{$B} {
+    font-family: 'Josefin Sans', 'Noto Sans SC', sans-serif;
+    @content;
+  }
+}
+
+// bem for element
+@mixin e($element) {
+  $E: $element !global;
+  $selector: &;
+  $currentSelector: "";
+  @each $unit in $element {
+    $currentSelector: #{$currentSelector + "." + $B + $separator + $unit + ","};
+  }
+
+  @if hitAllSpecialNestRule($selector) {
+    @at-root {
+      #{$selector} {
+        #{$currentSelector} {
+          @content;
+        }
+      }
+    }
+  } @else {
+    @at-root {
+      #{$currentSelector} {
+        @content;
+      }
+    }
+  }
+}
+
+// bem for modifier
+@mixin m($modifier) {
+  $selector: &;
+  $currentSelector: "";
+  @each $unit in $modifier {
+    $currentSelector: #{$currentSelector + & + $modifier-separator + $unit + ","};
+  }
+  @at-root {
+    #{$currentSelector} {
+      @content;
+    }
+  }
+}
+
+// deal with status
+@mixin when($state) {
+  @at-root {
+    &.#{$state-prefix + $state} {
+      @content;
+    }
+  }
+}
+
+// size 12,14,16,18,20,24,32,36,56,72
+@mixin icon-base($size) {
+  height: unit($size);
+  width: unit($size);
+}
+
+// user select is none
+@mixin user-select {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+@mixin font-base($font-size, $font-color, $is-bold:false) {
+  font-size: unit($font-size);
+  color: $font-color;
+  @if $is-bold {
+    font-weight: bold;
+  }
+}
+
+@mixin text-rule($font,$color:map_get($vi-default-theme,text)) {
+  @if $font==11 {
+    @include font-base(32, $color, true);
+  }
+  @else if $font==12 {
+    @include font-base(32, $color);
+  }
+  @else if $font==13 {
+    @include font-base(24, $color);
+  }
+  @else if $font==14 {
+    @include font-base(20, $color);
+  }
+  @else if $font==15 {
+    @include font-base(20, $color, true);
+  }
+  @else if $font==16 {
+    @include font-base(18, $color, true);
+  }
+  @else if $font==17 {
+    @include font-base(16, $color, true);
+  }
+  @else if $font==18 {
+    @include font-base(14, $color);
+  }
+  @else if $font==20 {
+    @include font-base(48, $color, true);
+  }
+  @else if $font==21 {
+    @include font-base(36, map_get($vi-blue,50), true);
+  }
+  @else if $font==22 {
+    @include font-base(32, $color, true);
+  }
+  @else if $font==23 {
+    @include font-base(24, $color, true);
+  }
+  @else if $font==24 {
+    @include font-base(24, map_get($vi-blue,50));
+  }
+  @else if $font==25 {
+    @include font-base(20, $color, true);
+  }
+  @else if $font==26 {
+    @include font-base(20, $color);
+  }
+  @else if $font==27 {
+    @include font-base(18, $color);
+  }
+  @else if $font==28 {
+    @include font-base(16, $color, true);
+  }
+  @else if $font==29 {
+    @include font-base(16, $color);
+    line-height: unit(24);
+  }
+  @else if $font==30 {
+    @include font-base(16, $color);
+    line-height: unit(20);
+    font-style: italic;
+  }
+  @else if $font==31 {
+    @include font-base(14, $color, true);
+  }
+  @else if $font==32 {
+    @include font-base(14, $color);
+    line-height: unit(20);
+  }
+  @else if $font==33 {
+    @include font-base(14, $color);
+    line-height: unit(20);
+    font-style: italic;
+  }
+  @else if $font==34 {
+    @include font-base(14, $color);
+    line-height: unit(12);
+  }
+}
+

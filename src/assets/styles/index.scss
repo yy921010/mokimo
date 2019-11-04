@@ -7,3 +7,6 @@
 @import './progress';
 @import './poster';
 @import './mask';
+@import "theme/index";
+
+@include vi-theme();

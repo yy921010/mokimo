@@ -1,6 +1,6 @@
 <template>
   <button
-    class="mok-button"
+    class="vi-button"
     @click="handleClick"
     :type="nativeType"
     :class="[

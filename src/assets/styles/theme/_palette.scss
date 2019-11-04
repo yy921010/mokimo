@@ -1,0 +1,57 @@
+// Color reference material mode
+$vi-red: (
+        50:rgba(192, 31, 36, 1),
+        100:rgba(180, 12, 18, 1)
+);
+
+$vi-grey: (
+        50:rgba(245, 245, 245, 1),
+        100:rgba(245, 245, 245, .5),
+        200:rgba(143, 143, 143, 1),
+        300:rgba(134, 134, 134, 1),
+        400:rgba(95, 95, 95, 1),
+        500:rgba(143, 143, 143, .1),
+        600:rgba(47, 47, 47, 1),
+        700:rgba(20, 20, 20, .5),
+        800:rgba(31, 31, 31, .7),
+        900:rgba(30, 31, 33, 1),
+        A100:rgba(31, 31, 31, .95),
+        A200:rgba(24, 24, 24, .8),
+        A300:rgba(24, 24, 24, .96),
+        A400:rgba(20, 20, 20, 1),
+);
+
+$vi-black: (
+        50:rgba(0, 0, 0, 0),
+        100:rgba(0, 0, 0, .1),
+        200:rgba(0, 0, 0, .2),
+        300:rgba(0, 0, 0, .3),
+        400:rgba(0, 0, 0, .4),
+        500:rgba(0, 0, 0, .5),
+        600:rgba(0, 0, 0, .6),
+        700:rgba(0, 0, 0, .7),
+        800:rgba(0, 0, 0, .8),
+        900:rgba(0, 0, 0, .9),
+        A100:rgba(0, 0, 0, 1),
+);
+
+$vi-blue: (
+        50:rgba(28, 192, 246, 1),
+        100:rgba(28, 192, 246, 1)
+);
+
+
+$vi-default-theme: (
+        text:map_get($vi-grey, 50),
+        navigator:map_get($vi-grey, 100),
+        background:map_get($vi-grey, A400),
+        mask-1: linear-gradient(to bottom, map_get($vi-black, 500), map_get($vi-black, 50)),
+        mask-2: linear-gradient(to bottom, map_get($vi-black, 50), map_get($vi-black, 500), map_get($vi-black, 700)),
+        mask-3: map_get($vi-black, 700),
+        mask-4: linear-gradient(to bottom, map_get($vi-grey, 700), map_get($vi-black, 50)),
+        mask-5: 0.4em 10px 0.9em 0em #1f1f1f,
+        button:(
+                default:white,
+                primary:green
+        )
+)

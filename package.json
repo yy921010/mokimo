@@ -2,7 +2,7 @@
   "name": "moko",
   "version": "0.1.6",
   "private": true,
-  "main":"dist/mokimo.umd.js",
+  "main": "dist/mokimo.umd.js",
   "scripts": {
     "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build",
