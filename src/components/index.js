@@ -7,6 +7,7 @@ import Poster from './Poster'
 import Mask from './Mask'
 import { model } from '../core'
 import '@/assets/styles/index.scss'
+
 export default {
   name: 'mokimo',
   version: '0.0.1',

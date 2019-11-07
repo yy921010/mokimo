@@ -1,6 +1,6 @@
 <template>
   <button
-    class="vi-button"
+    class="vik-button"
     @click="handleClick"
     :type="nativeType"
     :class="[
@@ -8,13 +8,13 @@
   disable?'is-disable':''
    ]"
   >
-    <mo-icon
-      v-if="iconName !== ''"
-      :name="iconName"
-      :type="iconType"
-      :size="20"
-      class="mok-button--icon"
-    ></mo-icon>
+<!--    <vi-icon-->
+<!--      v-if="iconName !== ''"-->
+<!--      :name="iconName"-->
+<!--      :type="iconType"-->
+<!--      :size="20"-->
+<!--      class="mok-button&#45;&#45;icon"-->
+<!--    ></vi-icon>-->
     <span>
       <slot></slot>
     </span>
@@ -22,14 +22,17 @@
 </template>
 
 <script>
+/**
+     * 用于项目中的公共 button
+     */
 export default {
   name: 'MoButton',
   props: {
     type: {
       type: String,
       validator: value =>
-        ['', 'primary', 'large', 'small', 'mini', 'ghost'].includes(value),
-      default: ''
+        ['default', 'primary', 'info', 'ghost'].includes(value),
+      default: 'default'
     },
     nativeType: {
       type: String,

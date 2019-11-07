@@ -1,7 +1,5 @@
-@charset "UTF-8";
-@import "./public";
-
-@include b(icon) {
+@mixin icon{
+  @include b(icon){
     font-weight: normal;
     font-style: normal;
     letter-spacing: normal;
@@ -13,4 +11,5 @@
     -webkit-font-feature-settings: 'liga';
     -webkit-font-smoothing: antialiased;
     vertical-align: middle;
+  }
 }

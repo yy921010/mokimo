@@ -3,6 +3,7 @@
     <h1>按钮</h1>
     <h2>基本状态</h2>
     <p>
+      <vi-icon :name="iconName" :size="24"></vi-icon>
       <mo-button>default</mo-button>
       <br>
       <mo-button type="primary">primary</mo-button>
@@ -46,7 +47,6 @@
     </p>
   </div>
 </template>
-
 <style>
 button {
   margin-bottom: 16px !important;

@@ -1,18 +1,16 @@
 <template>
-  <svg
-    class="mok-icon"
-    @click="handleClick"
-    :style="[{'font-size':unit(this.size),'width':unit(this.size),'height':unit(this.size)}]"
-  >
-    <use :xlink:href="icon"></use>
-  </svg>
+  <i class="vik-icon" @click="handleClick"
+     :class="iconClass"
+     :style="[{'font-size':size+'px','width':size+'px','height':size+'px'}]"
+  ></i>
 </template>
 
 <script>
-import unit from '@mixin/unit'
+/**
+     * 用于项目的图标处理，需要添加 cdn <link href="https://cdn.remixicon.com/releases/v2.1.0/remixicon.css" rel="stylesheet">
+     */
 export default {
-  name: 'MoIcon',
-  mixins: [unit],
+  name: 'ViIcon',
   props: {
     name: String,
     size: {
@@ -21,12 +19,13 @@ export default {
     },
     type: {
       type: String,
-      default: 'line'
+      default: 'line',
+      validate: (val) => ['line', 'fill'].includes(val)
     }
   },
   computed: {
-    icon () {
-      return this.$svgSymbol + `#remixicon-${this.name}-${this.type}`
+    iconClass () {
+      return `ri-${this.name}-${this.type}`
     }
   },
   methods: {

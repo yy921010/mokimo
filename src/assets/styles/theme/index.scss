@@ -2,9 +2,10 @@
 @import "palette";
 @import "prebuild";
 @import "packages/button";
-
+@import "packages/icon";
 
 
 @mixin vi-theme(){
-  @include button();
+  @include button;
+  @include icon;
 }
