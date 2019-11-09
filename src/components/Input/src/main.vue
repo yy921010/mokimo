@@ -11,8 +11,8 @@
       @click="handleClick"
       :class="[isError?'is-error':'', type?'mok-input--'+type:'']"
     >
-    <mo-icon class="mok-input--clear" name="close" v-if="showClear" @click="clearWord"/>
-    <mo-icon class="mok-input--search-icon" name="search" v-if="showSearchIcon"/>
+    <vi-icon class="mok-input--clear" name="close" v-if="showClear" @click="clearWord"/>
+    <vi-icon class="mok-input--search-icon" name="search" v-if="showSearchIcon"/>
   </div>
 </template>
 <script>

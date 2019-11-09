@@ -8,6 +8,8 @@
   box-sizing: border-box;
   outline: none;
   margin: 0;
+  @include text-rule(26);
+  @include button-size(200, 46, 2);
 }
 
 @mixin button-size($width, $height, $border-radius) {
@@ -16,11 +18,91 @@
   border-radius: unit($border-radius);
 }
 
+
+@function button-background-get($button-type) {
+  @return map_get(map_get($vi-theme-button, background), $button-type)
+}
+
+@function button-hover-get($button-type) {
+  @return map_get(map_get($vi-theme-button, hover), $button-type)
+}
+
+@function button-border-get($button-type) {
+  @return map_get(map_get($vi-theme-button, border), $button-type)
+}
+
+@function button-disable-get($button-type) {
+  @return map_get(map_get($vi-theme-button, disable), $button-type)
+}
+
+@mixin button-variant($button-type) {
+  background-color: button-background-get($button-type);
+  border: unit(1) solid button-border-get($button-type);
+  &:hover {
+    border-color: button-background-get($button-type);
+    background-color: button-hover-get($button-type);
+  }
+  &:active {
+    outline: none;
+  }
+  @include when(disable) {
+    &,
+    &:hover,
+    &:focus {
+      color: map_get($vi-default-theme, unvaliable);
+      cursor: not-allowed;
+      background-image: none;
+      background-color: button-disable-get($button-type);
+      border-color: button-disable-get($button-type);
+    }
+  }
+}
+
 @mixin button() {
   @include b(button) {
     @include button-base;
+    @include user-select;
+    padding: 0 unit(10);
     & + & {
       margin-left: unit(10);
     }
+
+    &::-moz-focus-inner {
+      border: 0;
+    }
+
+    @include m(icon) {
+      margin-right: unit(10);
+    }
+
+    @include e(default) {
+      @include button-variant(default);
+    }
+    @include e(primary) {
+      @include button-variant(primary);
+    }
+    @include e(info) {
+      @include button-variant(info);
+    }
+    @include e(link) {
+      @include button-variant(link);
+    }
+    @include m(large){
+      @include button-size(300, 40, 2);
+    }
+
+    @include m(medium){
+      @include button-size(200, 46, 2);
+     }
+    @include m(small){
+      @include button-size(140, 40, 2);
+    }
+
+    @include m(mini){
+      font-size: unit(16);
+      @include button-size(60, 28, 2);
+    }
+
+
   }
 }

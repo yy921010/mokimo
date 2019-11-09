@@ -44,8 +44,9 @@ $transition-time: 0.35s !default;
 
 
 @function unit($number) {
-  @return $number+'px'
+  @return $number+px
 }
+
 
 // bem for block
 @mixin b($block) {

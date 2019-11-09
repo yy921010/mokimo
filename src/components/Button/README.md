@@ -1,5 +1,5 @@
-# MoButton
-> MoButton component.
+# ViButton
+> ViButton component.
 
 ## 基本用法
 ### 安装
