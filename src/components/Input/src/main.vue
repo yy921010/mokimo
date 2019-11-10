@@ -1,5 +1,5 @@
 <template>
-  <div class="mok-input">
+  <div class="vik-input">
     <input
       :type="nativeType"
       :maxlength="maxlength"
@@ -9,15 +9,15 @@
       :value="value"
       @input="handleInput"
       @click="handleClick"
-      :class="[isError?'is-error':'', type?'mok-input--'+type:'']"
+      :class="[isError?'is-error':'', type?'vik-input__'+type:'']"
     >
-    <mo-icon class="mok-input--clear" name="close" v-if="showClear" @click="clearWord"/>
-    <mo-icon class="mok-input--search-icon" name="search" v-if="showSearchIcon"/>
+    <vi-icon class="vik-input--clear" name="close" v-if="showClear" @click="clearWord"/>
+    <vi-icon class="vik-input--search-icon" name="search" v-if="showSearchIcon"/>
   </div>
 </template>
 <script>
 export default {
-  name: 'MoInput',
+  name: 'ViInput',
   props: {
     nativeType: {
       type: String,
@@ -36,7 +36,7 @@ export default {
     type: {
       type: String,
       default: 'default',
-      validator: value => ['default', 'search'].indexOf(value) !== -1
+      validator: value => ['default', 'search'].includes(value)
     },
     placeholder: {
       type: String,
@@ -62,7 +62,7 @@ export default {
     clearWord () {
       this.$emit('input', '')
     },
-    handleClick () {
+    handleClick (event) {
       this.$emit('click', event)
     }
   }

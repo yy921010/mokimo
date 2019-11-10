@@ -1,0 +1,48 @@
+@mixin progress{
+  @include b(progress) {
+    width: 100%;
+    background-color: map_get($vi-grey,A500);
+    position: relative;
+
+    @include m(schedule) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      transition: $transition-time;
+      background-color: $primary-color;
+    }
+
+    @include m(buffer) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 50%;
+      transition: $transition-time;
+      background-color: map_get($vi-grey,100);
+    }
+
+    @include m(drag-button) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: unit(-6);
+      left: unit(-6);
+      z-index: 1;
+      width: unit(20);
+      height: unit(20);
+      border-radius: 50%;
+      background-color: map_get($vi-default-theme,text);
+      cursor: pointer;
+
+      @include e(drag-cricle) {
+        width: unit(8);
+        height: unit(8);
+        border-radius: 50%;
+        background-color: $primary-color;
+      }
+    }
+  }
+}

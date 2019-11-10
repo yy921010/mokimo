@@ -1,27 +1,27 @@
 <template>
-  <div class="mok-time">
+  <div class="vik-time">
     <span
-      class="mok-time--hours"
+      class="vik-time--hours"
       @click.stop="chosen('hours')"
       :class="{'is-chosen':chosenName === 'hours'}"
     >{{hours}}</span>
-    <span class="mok-time--split">
-      <div class="mok-time__dots">
-        <i class="mok-time__dot"></i>
-        <i class="mok-time__dot"></i>
+    <span class="vik-time--split">
+      <div class="vik-time__dots">
+        <i class="vik-time__dot"></i>
+        <i class="vik-time__dot"></i>
       </div>
     </span>
     <span
-      class="mok-time--minute"
+      class="vik-time--minute"
       @click.stop="chosen('minutes')"
       :class="{'is-chosen':chosenName === 'minutes'}"
     >{{minutes}}</span>
-    <div class="mok-time--suffix">
-      <span class="mok-time__up" @click.stop="changeMinute(TIME_DIREC.UP)">
-        <mo-icon name="arrow-up-s"></mo-icon>
+    <div class="vik-time--suffix">
+      <span class="vik-time__up" @click.stop="changeMinute(TIME_DIREC.UP)">
+        <vi-icon name="arrow-up-s"/>
       </span>
-      <span class="mok-time__down" @click.stop="changeMinute(TIME_DIREC.DOWN)">
-        <mo-icon name="arrow-down-s"></mo-icon>
+      <span class="vik-time__down" @click.stop="changeMinute(TIME_DIREC.DOWN)">
+        <vi-icon name="arrow-down-s"/>
       </span>
     </div>
   </div>
@@ -29,7 +29,7 @@
 
 <script>
 export default {
-  name: 'MoTime',
+  name: 'ViTime',
   data () {
     return {
       chosenName: '',

@@ -1,20 +1,21 @@
 <template>
   <button
-    class="mok-button"
+    class="vik-button"
     @click="handleClick"
     :type="nativeType"
     :class="[
-  type?'mok-button--'+type:'',
-  disable?'is-disable':''
+  buttonClass,
+  disable?'is-disable':'',
+  size !==''? 'vik-button--'+size:''
    ]"
   >
-    <mo-icon
-      v-if="iconName !== ''"
-      :name="iconName"
+    <vi-icon
+      v-if="icon !== ''"
+      :name="icon"
       :type="iconType"
       :size="20"
-      class="mok-button--icon"
-    ></mo-icon>
+      class="vik-button--icon"
+    ></vi-icon>
     <span>
       <slot></slot>
     </span>
@@ -22,31 +23,44 @@
 </template>
 
 <script>
+/**
+     * 用于项目中的公共 button
+     */
 export default {
-  name: 'MoButton',
+  name: 'ViButton',
   props: {
     type: {
       type: String,
       validator: value =>
-        ['', 'primary', 'large', 'small', 'mini', 'ghost'].includes(value),
-      default: ''
+        ['default', 'primary', 'info', 'link'].includes(value),
+      default: 'default'
     },
     nativeType: {
       type: String,
       default: 'button',
       validator: val => ['button', 'reset', 'submit'].includes(val)
     },
+    size: {
+      type: String,
+      default: '',
+      validator: val => ['', 'large', 'medium', 'small', 'mini'].includes(val)
+    },
     disable: {
       type: Boolean,
       default: false
     },
-    iconName: {
+    icon: {
       type: String,
       default: ''
     },
     iconType: {
       type: String,
       default: 'line'
+    }
+  },
+  computed: {
+    buttonClass () {
+      return `vik-button__${this.type}`
     }
   },
   methods: {

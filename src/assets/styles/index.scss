@@ -1,9 +1,20 @@
 @charset "UTF-8";
-@import "./public";
-@import './button';
-@import './input';
-@import './icon';
-@import './time';
-@import './progress';
-@import './poster';
-@import './mask';
+@import "./palette";
+@import "./prebuild";
+@import "./packages/button";
+@import "./packages/icon";
+@import "./packages/input";
+@import "./packages/poster";
+@import "./packages/progress";
+@import "./packages/time";
+
+@mixin vi-theme(){
+  @include button;
+  @include icon;
+  @include input;
+  @include poster;
+  @include progress;
+  @include time;
+}
+
+@include vi-theme;

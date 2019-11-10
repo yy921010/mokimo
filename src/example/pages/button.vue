@@ -3,50 +3,41 @@
     <h1>按钮</h1>
     <h2>基本状态</h2>
     <p>
-      <mo-button>default</mo-button>
+      <vi-button>default</vi-button>
+      <vi-button type="default">default</vi-button>
+      <vi-button type="primary">primary</vi-button>
       <br>
-      <mo-button type="primary">primary</mo-button>
-      <br>
-      <mo-button type="large">large</mo-button>
-      <br>
-      <mo-button type="small">small</mo-button>
-      <br>
-      <mo-button type="mini">mini</mo-button>
-      <br>
-      <mo-button type="ghost">ghost</mo-button>
+      <vi-button type="info">info</vi-button>
+      <vi-button type="link">link</vi-button>
     </p>
     <h2>禁用状态</h2>
     <p>
-      <mo-button disable>default</mo-button>
+      <vi-button disable>default</vi-button>
+      <vi-button icon="search" type="primary" disable>primary</vi-button>
+      <vi-button type="primary" disable>primary</vi-button>
       <br>
-      <mo-button iconName="search" type="primary" disable>primary</mo-button>
+      <vi-button type="info" disable>info</vi-button>
+      <vi-button type="link" disable>link</vi-button>
       <br>
-      <mo-button type="large" disable>large</mo-button>
-      <br>
-      <mo-button type="small" disable>small</mo-button>
-      <br>
-      <mo-button type="mini" disable>mini</mo-button>
-      <br>
-      <mo-button type="ghost" disable>ghost</mo-button>
     </p>
 
-    <h2>带有图标</h2>
+    <h2>按钮尺寸</h2>
     <p>
-      <mo-button iconName="search" iconType="fill">default</mo-button>
-      <br>
-      <mo-button iconName="at" type="primary" disable>primary</mo-button>
-      <br>
-      <mo-button iconName="search" type="large">large</mo-button>
-      <br>
-      <mo-button iconName="play" type="small">small</mo-button>
-      <br>
-      <mo-button iconName="search" type="mini">mini</mo-button>
-      <br>
-      <mo-button iconName="search" type="ghost">ghost</mo-button>
+      <vi-button size="medium">medium</vi-button>
+      <vi-button size="large" type="info">large</vi-button>
+      <vi-button size="small">small</vi-button>
+      <vi-button size="mini" type="primary">mini</vi-button>
+    </p>
+
+    <h2>图标</h2>
+    <p>
+      <vi-button size="medium" icon="user">medium</vi-button>
+      <vi-button size="large" icon="search" type="info">large</vi-button>
+      <vi-button size="small">small</vi-button>
+      <vi-button size="mini" type="primary">mini</vi-button>
     </p>
   </div>
 </template>
-
 <style>
 button {
   margin-bottom: 16px !important;

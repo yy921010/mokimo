@@ -2,7 +2,7 @@
   <div class="progress-demo">
     <h1>进度条</h1>
     <h2>基本状态</h2>
-    <MoProgress :value="value"/>
+    <ViProgress :value="value"/>
   </div>
 </template>
 <style>

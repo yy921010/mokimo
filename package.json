@@ -2,7 +2,8 @@
   "name": "moko",
   "version": "0.1.6",
   "private": true,
-  "main":"dist/mokimo.umd.js",
+  "main": "dist/mokimo.umd.js",
+  "description": "A Component Library for Vue.js.",
   "scripts": {
     "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build",
@@ -15,8 +16,7 @@
   "dependencies": {
     "core-js": "^2.6.5",
     "vue": "^2.6.10",
-    "vue-router": "^3.0.3",
-    "remixicon": "^1.1.1"
+    "vue-router": "^3.0.3"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.6.0",

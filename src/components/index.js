@@ -4,7 +4,6 @@ import Icon from './Icon'
 import Time from './Time'
 import Progress from './Progress'
 import Poster from './Poster'
-import Mask from './Mask'
 import { model } from '../core'
 import '@/assets/styles/index.scss'
 export default {
@@ -16,7 +15,6 @@ export default {
   Time,
   Progress,
   Poster,
-  Mask,
   install (Vue, config = {}) {
     model(Vue, {
       components: [
@@ -25,8 +23,7 @@ export default {
         Icon,
         Time,
         Progress,
-        Poster,
-        Mask
+        Poster
       ],
       directives: [
       ],
