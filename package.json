@@ -1,14 +1,14 @@
 {
-  "name": "moko",
-  "version": "0.1.6",
-  "private": true,
+  "name": "vikoom",
+  "version": "0.1.7",
+  "private": false,
   "main": "dist/mokimo.umd.js",
   "description": "A Component Library for Vue.js.",
   "scripts": {
     "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build",
-    "build:lib": "vue-cli-service build --target lib --name mokimo ./src/components/index.js",
-    "build:preview": "vue-cli-service build --target lib --name mokimo ./src/components/index.js && npm pack",
+    "build:lib": "vue-cli-service build --target lib --name vikoom ./src/components/index.js",
+    "build:preview": "vue-cli-service build --target lib --name vikoom ./src/components/index.js && npm pack",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
     "start": "npm run serve"
