@@ -1,16 +1,14 @@
 <template>
-  <div class="mok-poster" :style="{'width':widthUnit,'height':heightUnit}" @click="handleClick">
-    <mo-icon class="mok-poster--default" :name="type" type="fill" :size="80"></mo-icon>
-    <mo-progress class="mok-poster--progress" :value="progress" v-if="this.progress !==0"></mo-progress>
-    <img class="mok-poster--image" :src="src" :alt="src">
+  <div class="vik-poster" :style="{'width':widthUnit,'height':heightUnit}" @click="handleClick">
+    <vi-icon class="vik-poster--default" :name="icon" type="fill" :size="80"></vi-icon>
+    <mo-progress class="vik-poster--progress" :value="progress" v-if="progress !==0"></mo-progress>
+    <img class="vik-poster--image" :src="src" :alt="src" @error="isShow=false" v-show="isShow">
     <slot></slot>
   </div>
 </template>
 <script>
-import unit from '@mixin/unit'
 export default {
-  name: 'MoPoster',
-  mixins: [unit],
+  name: 'ViPoster',
   props: {
     width: {
       type: Number,
@@ -20,7 +18,7 @@ export default {
       type: Number,
       default: 0
     },
-    type: {
+    icon: {
       type: String,
       default: 'film'
     },
@@ -31,6 +29,23 @@ export default {
     progress: {
       type: Number,
       default: 0
+    }
+  },
+  data: () => ({
+    isShow: true
+  }),
+  computed: {
+    heightUnit () {
+      if (!this.height) {
+        return 0
+      }
+      return `${this.height}px`
+    },
+    widthUnit () {
+      if (!this.width) {
+        return 0
+      }
+      return `${this.width}px`
     }
   },
   methods: {

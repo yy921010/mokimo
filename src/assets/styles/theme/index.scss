@@ -4,10 +4,11 @@
 @import "packages/button";
 @import "packages/icon";
 @import "packages/input";
-
+@import "packages/poster";
 
 @mixin vi-theme(){
   @include button;
   @include icon;
   @include input;
+  @include poster;
 }
