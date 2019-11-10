@@ -1,0 +1,82 @@
+@mixin time{
+  @include b(time) {
+    display: flex;
+    height: unit(46);
+    width: unit(220);
+    @include user-select;
+    @include m(hours) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: unit(46);
+      width: unit(64);
+      cursor: pointer;
+      transition: .1s;
+      background-color: $C03;
+      border: none;
+      outline: none;
+      @include T(26);
+      color: $C31;
+      text-align: center;
+      line-height: 1;
+      &:hover {
+        background-color: $C22;
+      }
+      @include when(chosen){
+        background-color: $C22;
+      }
+    }
+    @include m(split) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: unit(46);
+      width: unit(46);
+      color: $C31;
+      background-color: $C03;
+      @include e(dots){
+        height: 45%;
+        width: unit(20);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        @include e(dot){
+          display: inline-block;
+          width: unit(5);
+          height: unit(5);
+          border-radius: 50%;
+          background-color: $C31;
+        }
+      }
+    }
+
+    @include m(minute) {
+      @extend .mok-time--hours;
+    }
+    @include m(suffix) {
+      fill: $C31;
+      display: flex;
+      flex-direction: column;
+      height: unit(46);
+      width: unit(46);
+      background-color: $C17;
+      cursor: pointer;
+      text-align: center;
+      @include e(up) {
+        height: unit(46/2);
+        line-height: unit(46/2);
+        &:hover {
+          background-color: $C03;
+        }
+      }
+      @include e(down) {
+        height: unit(46/2);
+        line-height: unit(46/2);
+        &:hover {
+          background-color: $C03;
+        }
+      }
+    }
+  }
+}

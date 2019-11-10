@@ -41,6 +41,7 @@ $vi-blue: (
         100:rgba(28, 192, 246, 1)
 );
 
+$primary-color: map_get($vi-red, 50);
 
 $vi-default-theme: (
         text:map_get($vi-grey, 50),
@@ -58,7 +59,7 @@ $vi-theme-button: (
         text:map_get($vi-grey, 50),
         background:(
                 default: transparent,
-                primary:map_get($vi-red, 50),
+                primary: $primary-color,
                 info: map_get($vi-blue, 50),
                 link: transparent
         ),
