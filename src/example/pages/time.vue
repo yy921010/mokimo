@@ -1,7 +1,7 @@
 <template>
   <div class="time-demo">
     <h1>时间输入框</h1>
-    <mo-time v-model="date"></mo-time>
+    <vi-time v-model="date"></vi-time>
     {{date}}
   </div>
 </template>

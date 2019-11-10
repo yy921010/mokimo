@@ -69,7 +69,7 @@
     @include m(search-icon) {
       @include icon-base(20);
       position: absolute;
-      top: unit(12);
+      top: unit(10);
       right: unit(10);
       color: map_get($vi-grey,300);
     }

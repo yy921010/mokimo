@@ -12,18 +12,18 @@
       width: unit(64);
       cursor: pointer;
       transition: .1s;
-      background-color: $C03;
+      background-color: map_get($vi-grey,A500);
       border: none;
       outline: none;
-      @include T(26);
-      color: $C31;
+      @include text-rule(26);
+      color: map_get($vi-default-theme,text);
       text-align: center;
       line-height: 1;
       &:hover {
-        background-color: $C22;
+        background-color: map_get($vi-blue,50);
       }
       @include when(chosen){
-        background-color: $C22;
+        background-color: map_get($vi-blue,50);
       }
     }
     @include m(split) {
@@ -32,8 +32,8 @@
       justify-content: center;
       height: unit(46);
       width: unit(46);
-      color: $C31;
-      background-color: $C03;
+      color: map_get($vi-default-theme,text);
+      background-color: map_get($vi-grey,A500);
       @include e(dots){
         height: 45%;
         width: unit(20);
@@ -46,35 +46,33 @@
           width: unit(5);
           height: unit(5);
           border-radius: 50%;
-          background-color: $C31;
+          background-color: map_get($vi-default-theme,text);
         }
       }
     }
 
     @include m(minute) {
-      @extend .mok-time--hours;
+      @extend .vik-time--hours;
     }
     @include m(suffix) {
-      fill: $C31;
+      color: map_get($vi-default-theme,text);
       display: flex;
       flex-direction: column;
       height: unit(46);
       width: unit(46);
-      background-color: $C17;
+      background-color: map_get($vi-grey,A100);
       cursor: pointer;
       text-align: center;
       @include e(up) {
         height: unit(46/2);
-        line-height: unit(46/2);
         &:hover {
-          background-color: $C03;
+          background-color: map_get($vi-grey,A500);
         }
       }
       @include e(down) {
         height: unit(46/2);
-        line-height: unit(46/2);
         &:hover {
-          background-color: $C03;
+          background-color: map_get($vi-grey,A500);
         }
       }
     }

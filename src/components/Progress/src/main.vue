@@ -1,13 +1,11 @@
 <template>
-  <div class="mok-progress" :style="{'height':heightUnit}">
-    <div class="mok-progress--schedule" :style="{'width':percent}"></div>
+  <div class="vik-progress" :style="{'height':heightUnit}">
+    <div class="vik-progress--schedule" :style="{'width':percent}"></div>
   </div>
 </template>
 <script>
-import unit from '@mixin/unit'
 export default {
-  name: 'MoProgress',
-  mixins: [unit],
+  name: 'ViProgress',
   props: {
     value: {
       type: Number,
@@ -20,8 +18,22 @@ export default {
   },
   computed: {
     percent () {
-      return this.value + '%'
+      let finalResult = 0
+      if (this.value >= 100) {
+        finalResult = 100
+      }
+      if (this.value <= 0) {
+        finalResult = 0
+      }
+      return finalResult + '%'
+    },
+    heightUnit () {
+      if (!this.height) {
+        return 0
+      }
+      return `${this.height}px`
     }
   }
+
 }
 </script>

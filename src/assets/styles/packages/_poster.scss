@@ -8,7 +8,7 @@
     cursor: pointer;
 
     @include m(progress) {
-      position: absolute;
+      position: absolute !important;
       left: 0;
       bottom: 0;
       z-index: 2;

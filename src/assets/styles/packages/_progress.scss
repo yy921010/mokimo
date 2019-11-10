@@ -1,4 +1,4 @@
-@mixin  progress{
+@mixin progress{
   @include b(progress) {
     width: 100%;
     background-color: map_get($vi-grey,A500);

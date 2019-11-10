@@ -1,7 +1,7 @@
 <template>
   <div class="vik-poster" :style="{'width':widthUnit,'height':heightUnit}" @click="handleClick">
-    <vi-icon class="vik-poster--default" :name="icon" type="fill" :size="80"></vi-icon>
-    <mo-progress class="vik-poster--progress" :value="progress" v-if="progress !==0"></mo-progress>
+    <vi-icon class="vik-poster--default" :name="icon" type="fill" :size="80"/>
+    <vi-progress class="vik-poster--progress" :value="progress" v-if="progress !==0"/>
     <img class="vik-poster--image" :src="src" :alt="src" @error="isShow=false" v-show="isShow">
     <slot></slot>
   </div>
