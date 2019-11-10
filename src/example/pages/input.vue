@@ -2,13 +2,13 @@
   <div class="input">
     <h1>输入框</h1>
     <h2>默认</h2>
-    <mo-input placeholder="默认设置" v-model="input"></mo-input>
+    <vi-input placeholder="默认设置" v-model="input"></vi-input>
     <br>
     <h2>搜索</h2>
-    <mo-input type="search" :isError="false" placeholder="默认设置" v-model="input1"></mo-input>
+    <vi-input type="search" :isError="false" placeholder="默认设置" v-model="input1"></vi-input>
     <br>
     <h2>密码</h2>
-    <mo-input :isError="false" placeholder="默认设置" v-model="input2" nativeType="password"></mo-input>
+    <vi-input :isError="false"  placeholder="默认设置" v-model="input2" nativeType="password"></vi-input>
   </div>
 </template>
 

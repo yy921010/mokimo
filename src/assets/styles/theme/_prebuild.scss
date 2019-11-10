@@ -52,7 +52,6 @@ $transition-time: 0.35s !default;
 @mixin b($block) {
   $B: $namespace+'-'+$block !global;
   .#{$B} {
-    font-family: 'Josefin Sans', 'Noto Sans SC', sans-serif;
     @content;
   }
 }

@@ -3,9 +3,11 @@
 @import "prebuild";
 @import "packages/button";
 @import "packages/icon";
+@import "packages/input";
 
 
 @mixin vi-theme(){
   @include button;
   @include icon;
+  @include input;
 }
