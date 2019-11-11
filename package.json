@@ -1,8 +1,8 @@
 {
   "name": "vikoom",
-  "version": "0.1.7",
+  "version": "0.1.9",
   "private": false,
-  "main": "dist/mokimo.umd.js",
+  "main": "dist/vikoom.common.js",
   "description": "A Component Library for Vue.js.",
   "scripts": {
     "serve": "vue-cli-service serve --open",
